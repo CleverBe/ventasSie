@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-<nav id="compactSidebar">
-    <ul class="menu-category">
-        <li class="active">
-            <a href="#" class="menu toggle" data-active="true">
-                <div class="base-menu">
-                    <div class="base-icons">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
-                            <rect x="3" y="3" width="7" height="7"></rect>
-                            <rect x="14" y="3" width="7" height="7"></rect>
-                            <rect x="14" y="14" width="7" height="7"></rect>
-                            <rect x="3" y="14" width="7" height="7"></rect>
-                        </svg>
-                    </div>
-                    <span>CATEGORÍAS</span>
-=======
 <!-- <div class="sidebar-wrapper sidebar-theme">
 
     <nav id="sidebar">
@@ -95,21 +79,25 @@
 
 </div> -->
 
+
 <nav id="compactSidebar">
     <ul class="menu-categories">
         <li class="acive">
             <a href="#" class="menu toggle" data-active="true">
                 <div class="base-menu">
                     <div class="base-icons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
                     </div>
                     <span>CATEGORIAS</span>
->>>>>>> f8804e3338d4b24ea8f205abcb9e454d603e2bd7
                 </div>
             </a>
         </li>
-        
-<<<<<<< HEAD
+
         <li class="active">
             <a href="#" class="menu toggle" data-active="false">
                 <div class="base-menu">
@@ -120,19 +108,11 @@
                             <rect x="14" y="14" width="7" height="7"></rect>
                             <rect x="3" y="14" width="7" height="7"></rect>
                         </svg>
-=======
-        <li class="acive">
-            <a href="#" class="menu toggle" data-active="false">
-                <div class="base-menu">
-                    <div class="base-icons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
->>>>>>> f8804e3338d4b24ea8f205abcb9e454d603e2bd7
                     </div>
                     <span>PRODUCTOS</span>
                 </div>
             </a>
         </li>
-<<<<<<< HEAD
         <li class="active">
             <a href="#" class="menu toggle" data-active="false">
                 <div class="base-menu">
@@ -143,20 +123,11 @@
                             <rect x="14" y="14" width="7" height="7"></rect>
                             <rect x="3" y="14" width="7" height="7"></rect>
                         </svg>
-=======
-        
-        <li class="acive">
-            <a href="#" class="menu toggle" data-active="false">
-                <div class="base-menu">
-                    <div class="base-icons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
->>>>>>> f8804e3338d4b24ea8f205abcb9e454d603e2bd7
                     </div>
                     <span>VENTAS</span>
                 </div>
             </a>
         </li>
-<<<<<<< HEAD
         <li class="active">
             <a href="#" class="menu toggle" data-active="false">
                 <div class="base-menu">
@@ -182,20 +153,11 @@
                             <rect x="14" y="14" width="7" height="7"></rect>
                             <rect x="3" y="14" width="7" height="7"></rect>
                         </svg>
-=======
-        
-        <li class="acive">
-            <a href="#" class="menu toggle" data-active="false">
-                <div class="base-menu">
-                    <div class="base-icons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
->>>>>>> f8804e3338d4b24ea8f205abcb9e454d603e2bd7
                     </div>
                     <span>ROLES</span>
                 </div>
             </a>
         </li>
-<<<<<<< HEAD
         <li class="active">
             <a href="#" class="menu toggle" data-active="false">
                 <div class="base-menu">
@@ -206,20 +168,11 @@
                             <rect x="14" y="14" width="7" height="7"></rect>
                             <rect x="3" y="14" width="7" height="7"></rect>
                         </svg>
-=======
-        
-        <li class="acive">
-            <a href="#" class="menu toggle" data-active="false">
-                <div class="base-menu">
-                    <div class="base-icons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
->>>>>>> f8804e3338d4b24ea8f205abcb9e454d603e2bd7
                     </div>
                     <span>PERMISOS</span>
                 </div>
             </a>
         </li>
-<<<<<<< HEAD
         <li class="active">
             <a href="#" class="menu toggle" data-active="false">
                 <div class="base-menu">
@@ -230,20 +183,11 @@
                             <rect x="14" y="14" width="7" height="7"></rect>
                             <rect x="3" y="14" width="7" height="7"></rect>
                         </svg>
-=======
-        
-        <li class="acive">
-            <a href="#" class="menu toggle" data-active="false">
-                <div class="base-menu">
-                    <div class="base-icons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
->>>>>>> f8804e3338d4b24ea8f205abcb9e454d603e2bd7
                     </div>
                     <span>ASIGNAR</span>
                 </div>
             </a>
         </li>
-<<<<<<< HEAD
         <li class="active">
             <a href="#" class="menu toggle" data-active="false">
                 <div class="base-menu">
@@ -254,20 +198,11 @@
                             <rect x="14" y="14" width="7" height="7"></rect>
                             <rect x="3" y="14" width="7" height="7"></rect>
                         </svg>
-=======
-        
-        <li class="acive">
-            <a href="#" class="menu toggle" data-active="false">
-                <div class="base-menu">
-                    <div class="base-icons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
->>>>>>> f8804e3338d4b24ea8f205abcb9e454d603e2bd7
                     </div>
                     <span>USUARIOS</span>
                 </div>
             </a>
         </li>
-<<<<<<< HEAD
         <li class="active">
             <a href="#" class="menu toggle" data-active="false">
                 <div class="base-menu">
@@ -278,20 +213,11 @@
                             <rect x="14" y="14" width="7" height="7"></rect>
                             <rect x="3" y="14" width="7" height="7"></rect>
                         </svg>
-=======
-        
-        <li class="acive">
-            <a href="#" class="menu toggle" data-active="false">
-                <div class="base-menu">
-                    <div class="base-icons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
->>>>>>> f8804e3338d4b24ea8f205abcb9e454d603e2bd7
                     </div>
                     <span>MONEDAS</span>
                 </div>
             </a>
         </li>
-<<<<<<< HEAD
         <li class="active">
             <a href="#" class="menu toggle" data-active="false">
                 <div class="base-menu">
@@ -302,20 +228,11 @@
                             <rect x="14" y="14" width="7" height="7"></rect>
                             <rect x="3" y="14" width="7" height="7"></rect>
                         </svg>
-=======
-        
-        <li class="acive">
-            <a href="#" class="menu toggle" data-active="false">
-                <div class="base-menu">
-                    <div class="base-icons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
->>>>>>> f8804e3338d4b24ea8f205abcb9e454d603e2bd7
                     </div>
                     <span>ARQUEOS</span>
                 </div>
             </a>
         </li>
-<<<<<<< HEAD
         <li class="active">
             <a href="#" class="menu toggle" data-active="false">
                 <div class="base-menu">
@@ -326,23 +243,10 @@
                             <rect x="14" y="14" width="7" height="7"></rect>
                             <rect x="3" y="14" width="7" height="7"></rect>
                         </svg>
-=======
-        
-        <li class="acive">
-            <a href="#" class="menu toggle" data-active="false">
-                <div class="base-menu">
-                    <div class="base-icons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
->>>>>>> f8804e3338d4b24ea8f205abcb9e454d603e2bd7
                     </div>
                     <span>REPORTES</span>
                 </div>
             </a>
         </li>
-<<<<<<< HEAD
-
-=======
-        
->>>>>>> f8804e3338d4b24ea8f205abcb9e454d603e2bd7
     </ul>
 </nav>
