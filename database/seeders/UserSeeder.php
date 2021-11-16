@@ -15,17 +15,17 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name' => 'fenris',
-            'phone' => '1234567890',
-            'email' => 'correo@correo.com',
+            'name' => 'emanuel',
+            'phone' => '6187236',
+            'email' => 'emanuel@gmail.com',
             'profile' => 'ADMIN',
             'status' => 'ACTIVE',
             'password' => bcrypt('123')
         ]);
         User::create([
-            'name' => 'daryl',
-            'phone' => '1234567891',
-            'email' => 'correo@correo1.com',
+            'name' => 'Ramiro',
+            'phone' => '7187235',
+            'email' => 'Ramiro123@gmail.com',
             'profile' => 'EMPLOYEE',
             'status' => 'ACTIVE',
             'password' => bcrypt('123')
