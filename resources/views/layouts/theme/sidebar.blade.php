@@ -215,7 +215,7 @@
                             <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
                         </svg>
                         <span>REPORTES</span>
-                    </div>  
+                    </div>
                     
                 </div>
             </a>
