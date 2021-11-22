@@ -9,7 +9,7 @@
 <link href="{{ asset('assets/css/dashboard/dash_1.css') }}" rel="stylesheet" type="text/css" />
 
 <link href="{{ asset('plugins/font-icons/fontawesome/css/fontawesome.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ asset('css/fontawesome.css') }}" rel="stylesheet" type="text/css" />
+<link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet" type="text/css" />
 
 <link href="{{ asset('assets/css/elements/avatar.css') }}" rel="stylesheet" type="text/css" />
 
