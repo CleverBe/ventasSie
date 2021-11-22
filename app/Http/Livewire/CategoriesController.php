@@ -52,9 +52,9 @@ class CategoriesController extends Component
     {
         $rules = ['name' => 'required|unique:categories|min:3'];
         $messages = [
-            'name.required' => 'El nombre de la categoria es requerido',
-            'name.unique' => 'Ya existe el nombre de la categoria',
-            'name.min' => 'El nombre de la categoria debe tener al menos 3 caracteres'
+            'name.required' => 'El nombre de la categoría es requerido',
+            'name.unique' => 'Ya existe el nombre de la categoría',
+            'name.min' => 'El nombre de la categoría debe tener al menos 3 caracteres'
         ];
         $this->validate($rules, $messages);
 
