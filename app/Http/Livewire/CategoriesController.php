@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Category;
+<<<<<<< HEAD
 use Illuminate\Sipport\Facades\Storage;
 use Livewire\WithFileUploads; //trit
 use Livewire\WithPagination;
@@ -14,6 +15,19 @@ class CategoriesController extends Component
     use WithPagination;
 
     public $name, $search, $image, $selected_id, $pageTittle, $componentName;
+=======
+use Livewire\WithFileUploads;
+use Livewire\WithPagination;
+use Illuminate\Support\Facades\Storage;
+
+class CategoriesController extends Component
+{
+
+    use WithFileUploads;
+    use WithPagination;
+
+    public $name, $search, $image, $selected_id, $pageTitle, $componentName;
+>>>>>>> c2feb9041901c8efc9950b799b9c0df7708d00d1
     private $pagination = 5;
 
     public function mount()
@@ -33,7 +47,10 @@ class CategoriesController extends Component
             $data = Category::where('name', 'like', '%' . $this->search . '%')->paginate($this->pagination);
         else
             $data = Category::orderBy('id', 'desc')->paginate($this->pagination);
+<<<<<<< HEAD
 
+=======
+>>>>>>> c2feb9041901c8efc9950b799b9c0df7708d00d1
         return view('livewire.category.categories', ['categories' => $data])
             ->extends('layouts.theme.app')
             ->section('content');
@@ -48,19 +65,14 @@ class CategoriesController extends Component
 
         $this->emit('show-modal', 'show modal!');
     }
-
     public function Store()
     {
-        $rules = [
-            'name' => 'required|unique:categories|min:3'
-        ];
-
+        $rules = ['name' => 'required|unique:categories|min:3'];
         $messages = [
-            'nam.required' => 'Nombre de categoría requerido',
-            'name.unique' => 'Ya esxiste la categoría',
-            'name.min' => 'El nombre de la categoría debe tener almenos 3 caractéres'
+            'name.required' => 'El nombre de la categoria es requerido',
+            'name.unique' => 'Ya existe el nombre de la categoria',
+            'name.min' => 'El nombre de la categoria debe tener al menos 3 caracteres'
         ];
-
         $this->validate($rules, $messages);
 
         $category = Category::create([
@@ -68,18 +80,16 @@ class CategoriesController extends Component
         ]);
 
         $customFileName;
-        if($this->image)
-        {
+        if ($this->image) {
             $customFileName = uniqid() . '_.' . $this->image->extension();
             $this->image->storeAs('public/categorias', $customFileName);
             $category->image = $customFileName;
             $category->save();
         }
-
         $this->resetUI();
         $this->emit('category-added', 'Categoría Registrada');
     }
-
+    
     public function resetUI()
     {
         $this->name = '';
