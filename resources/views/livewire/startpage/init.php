@@ -20,7 +20,7 @@
                             <tr>
                                 <th class="table-th text-withe">DESCRIPCIÓN</th>
                                 <th class="table-th text-withe">IMAGEN</th>
-                                <th class="table-th text-w  ithe">ACCIONES</th>
+                                <th class="table-th text-withe">ACCIONES</th>
                             </tr>
                         </thead>
                         <tbody>

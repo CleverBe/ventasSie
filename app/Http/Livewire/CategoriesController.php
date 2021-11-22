@@ -4,16 +4,17 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Category;
-use Illuminate\Sipport\Facades\Storage;
-use Livewire\WithFileUploads; //trit
+use Livewire\WithFileUploads;
 use Livewire\WithPagination;
+use Illuminate\Support\Facades\Storage;
 
 class CategoriesController extends Component
 {
+
     use WithFileUploads;
     use WithPagination;
 
-    public $name, $search, $image, $selected_id, $pageTittle, $componentName;
+    public $name, $search, $image, $selected_id, $pageTitle, $componentName;
     private $pagination = 5;
 
     public function mount()
@@ -71,7 +72,7 @@ class CategoriesController extends Component
         $this->resetUI();
         $this->emit('category-added', 'Categoría Registrada');
     }
-
+    
     public function resetUI()
     {
         $this->name = '';

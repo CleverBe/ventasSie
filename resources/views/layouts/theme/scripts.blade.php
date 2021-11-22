@@ -1,6 +1,6 @@
 <script src="{{ asset('assets/js/libs/jquery-3.1.1.min.js') }}"></script>
-<script src=bootstrap/js/popper.min.js></script>
-<script src=bootstrap/js/bootstrap.min.js></script>
+<script src="bootstrap/js/popper.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="{{ asset('plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
 <script src="{{ asset('assets/js/app.js') }}"></script>
 <script>
@@ -11,7 +11,7 @@
 <script src="{{ asset('assets/js/custom.js') }}"></script>
 
 <script src="{{ asset('plugins/sweetalerts/sweetalerts2.min.js') }}"></script>
-<script src="{{ asset('plugins/notificaction/snackbar/snackbar.min.js') }}"></script>
+<script src="{{ asset('plugins/notificaction/snackbar.min.js') }}"></script>
 <script src="{{ asset('plugins/nicescroll/nicescroll.min.js') }}"></script>
 <script src="{{ asset('plugins/currency/currency.js') }}"></script>
 <script>
