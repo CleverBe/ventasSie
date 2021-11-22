@@ -4,7 +4,6 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Category;
-<<<<<<< HEAD
 use Illuminate\Sipport\Facades\Storage;
 use Livewire\WithFileUploads; //trit
 use Livewire\WithPagination;
@@ -15,19 +14,6 @@ class CategoriesController extends Component
     use WithPagination;
 
     public $name, $search, $image, $selected_id, $pageTittle, $componentName;
-=======
-use Livewire\WithFileUploads;
-use Livewire\WithPagination;
-use Illuminate\Support\Facades\Storage;
-
-class CategoriesController extends Component
-{
-
-    use WithFileUploads;
-    use WithPagination;
-
-    public $name, $search, $image, $selected_id, $pageTitle, $componentName;
->>>>>>> c2feb9041901c8efc9950b799b9c0df7708d00d1
     private $pagination = 5;
 
     public function mount()
@@ -47,10 +33,6 @@ class CategoriesController extends Component
             $data = Category::where('name', 'like', '%' . $this->search . '%')->paginate($this->pagination);
         else
             $data = Category::orderBy('id', 'desc')->paginate($this->pagination);
-<<<<<<< HEAD
-
-=======
->>>>>>> c2feb9041901c8efc9950b799b9c0df7708d00d1
         return view('livewire.category.categories', ['categories' => $data])
             ->extends('layouts.theme.app')
             ->section('content');
@@ -89,7 +71,7 @@ class CategoriesController extends Component
         $this->resetUI();
         $this->emit('category-added', 'Categoría Registrada');
     }
-    
+
     public function resetUI()
     {
         $this->name = '';
