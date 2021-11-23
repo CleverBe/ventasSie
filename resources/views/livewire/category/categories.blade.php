@@ -37,11 +37,11 @@
                                         </span>
                                     </td>
                                     <td class="text-center">
-                                        <a href="javascript:coid(0)" wire:click="Edit({{ $category->id }})"
+                                        <a href="javascript:void(0)" wire:click="Edit({{ $category->id }})"
                                             class="btn btn-dark mtmobile" title="Edit">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <a href="javascript:coid(0)" onclick="Confirm('{{ $category->id }}')"
+                                        <a href="javascript:void(0)" onclick="Confirm('{{ $category->id }}','{{ $category->name }}')"
                                             class="btn btn-dark" title="Delete">
                                             <i class="fas fa-trash"></i>
                                         </a>
@@ -50,7 +50,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {{$categories->links()}}
+                    {{ $categories->links() }}
                 </div>
             </div>
         </div>
@@ -62,11 +62,34 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
 
-        window.livewire.on('show-modal',msg=>{
+        window.livewire.on('show-modal', msg => {
             $('#theModal').modal('show')
         });
-        window.livewire.on('category-added',msg=>{
+        window.livewire.on('category-added', msg => {
             $('#theModal').modal('hide')
         });
+        window.livewire.on('category-updated', msg => {
+            $('#theModal').modal('hide')
+        });
+
     });
+
+    function Confirm(id,name) {
+        swal.fire({
+            title: 'CONFIRMAR',
+            icon:'warning',
+            text: 'Confirmar eliminar la categoria '+ '"'+name+'"',
+            type: 'warning',
+            showCancelButton: true,
+            cancelButtonText: 'Cerrar',
+            cancelButtonColor: '#383838',
+            confirmButtonColor: '#3B3F5C',
+            confirmButtonText: 'Aceptar'
+        }).then(function(result) {
+            if (result.value) {
+                window.livewire.emit('deleteRow', id)
+                Swal.close()
+            }
+        })
+    }
 </script>
