@@ -1,6 +1,6 @@
 <div class="footer-wrapper">
     <div class="footer-section f-section-1">
-        <p class="">Soluciones Informaticas Emanuel 2021 - Todos los derechos reservados<a target="_blank" href="https://www.solucionesinformaticasemanuel.gq">DesignReset</a>, From SIE</p>
+        <p class="">Soluciones Informaticas Emanuel 2021 - Todos los derechos reservados <br><a target="_blank" href="https://www.solucionesinformaticasemanuel.gq">Sitio wev</a>, From SIE</p>
     </div>
     <div class="footer-section f-section-2">
         <p class="">Demon Version <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">

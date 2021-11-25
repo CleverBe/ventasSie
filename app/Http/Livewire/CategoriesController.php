@@ -95,7 +95,7 @@ class CategoriesController extends Component
             $customFileName = uniqid() . '_.' . $this->image->extension();
             $this->image->storeAs('public/categorias', $customFileName);
             $imageName = $category->image;
-/* dd($imageName) imprime variable */
+            /* dd($imageName) imprime variable */
             $category->image = $customFileName;
             $category->save();
             if ($imageName != null) {
@@ -110,11 +110,9 @@ class CategoriesController extends Component
 
     protected $listeners = ['deleteRow' => 'Destroy'];
 
-    public function Destroy($id)
+    public function Destroy(Category $category)
     {
-        $category = Category::find($id);
-        /* dd($category); */
-
+        /* $category = Category::find($id); */
         $imageName = $category->image;
         $category->delete();
         if ($imageName != null) {

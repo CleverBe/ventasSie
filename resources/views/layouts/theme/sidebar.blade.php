@@ -81,7 +81,7 @@
                             <rect x="14" y="14" width="7" height="7"></rect>
                             <rect x="3" y="14" width="7" height="7"></rect>
                         </svg>
-                        <span>Categorias</span>
+                        <span>CATEGORIAS</span>
                     </div>
                     
                 </div>

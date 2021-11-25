@@ -49,7 +49,34 @@
         .indblock {
             display: block;
         }
+
+
+
     }
+
+    #sidebar ul.menu-categories li.menu>.dropdown-toggle svg {
+        color: #e3e7ed !important;
+        margin-right: 10px;
+        vertical-align: middle;
+        width: 20px;
+        height: 20px;
+        fill: rgba(0, 23, 55, 0.08);
+        stroke-width: 1.6;
+    }
+
+    #sidebar ul.menu-categories li.menu>.dropdown-toggle {
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        font-size: 13px;
+        color: #f7faff !important;
+        padding: 11px 14px;
+        transition: .600s;
+        margin-bottom: 4px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
 </style>
 
 

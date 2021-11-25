@@ -3,13 +3,13 @@
         <div class="widget widget-chart-one">
             <div class="widget-heading">
                 <h4 class="card-title">
-                    <b>{{ $componentName }} | {{ $pageTitle }}</b>
+                    <b>ComponentName | PageTitle</b>
                 </h4>
                 <ul class="tabs tab-pills">
-
-                    <a href="javascript:void(0)" class="btn btn-dark" data-toggle="modal"
+                    
+                        <a href="javascript:void(0)" class="btn btn-dark" data-toggle="modal"
                         data-target="#theModal">Agregar</a>
-
+                    
                 </ul>
             </div>
             @include('common.searchbox')
@@ -20,29 +20,49 @@
                         <thead class="text-white" style="background: #3B3F5C">
                             <tr>
                                 <th class="table-th text-withe">DESCRIPCIÓN</th>
+                                <th class="table-th text-withe text-center">BARCODE</th>
+                                <th class="table-th text-withe text-center">CATEGORIA</th>
+                                <th class="table-th text-withe text-center">PRECIO</th>
+                                <th class="table-th text-withe text-center">STOCK</th>
+                                <th class="table-th text-withe text-center">INV.MIN</th>
                                 <th class="table-th text-withe text-center">IMAGEN</th>
                                 <th class="table-th text-withe text-center">ACCIONES</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($categories as $category)
+                            @foreach ($data as $product)
                                 <tr>
                                     <td>
-                                        <h6>{{ $category->name }}</h6>
+                                        <h6>{{ $product->name }}</h6>
                                     </td>
+                                    <td>
+                                        <h6 class="text-center">{{ $product->barcode }}</h6>
+                                    </td>
+                                    <td>
+                                        <h6 class="text-center">{{ $product->category }}</h6>
+                                    </td>
+                                    <td>
+                                        <h6 class="text-center">{{ $product->price }}</h6>
+                                    </td>
+                                    <td>
+                                        <h6 class=" text-center">{{ $product->stock }}</h6>
+                                    </td>
+                                    <td>
+                                        <h6 class="text-center">{{ $product->alerts }}</h6>
+                                    </td>
+
                                     <td class="text-center">
                                         <span>
-                                            <img src="{{ asset('storage/categorias/' . $category->imagen) }}"
+                                            <img src="{{ asset('storage/products/' . $product->imagen) }}"
                                                 alt="imagen de ejemplo" height="70" width="80" class="rounded">
                                         </span>
                                     </td>
                                     <td class="text-center">
-                                        <a href="javascript:void(0)" wire:click="Edit({{ $category->id }})"
+                                        <a href="javascript:void(0)" wire:click="Edit({{ $product->id }})"
                                             class="btn btn-dark mtmobile" title="Edit">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <a href="javascript:void(0)" onclick="Confirm('{{ $category->id }}','{{ $category->name }}',
-                                            '{{ $category->products->count() }}')" class="btn btn-dark"
+                                        <a href="javascript:void(0)" onclick="Confirm('{{ $product->id }}','{{ $product->name }}')" class="btn btn-dark"
                                             title="Delete">
                                             <i class="fas fa-trash"></i>
                                         </a>
@@ -51,26 +71,35 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {{ $categories->links() }}
+                    {{ $data->links() }}
                 </div>
             </div>
         </div>
     </div>
-
-    @include('livewire.category.form')
+    @include('livewire.products.form')
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
 
-        window.livewire.on('show-modal', msg => {
+        
+        window.livewire.on('product-added', msg => {
+            $('#theModal').modal('hide')
+        });
+        window.livewire.on('product-updated', msg => {
+            $('#theModal').modal('hide')
+        });
+        window.livewire.on('product-deleted', msg => {
+            ///
+        });
+        window.livewire.on('modal-show', msg => {
             $('#theModal').modal('show')
         });
-        window.livewire.on('category-added', msg => {
+        window.livewire.on('modal-hide', msg => {
             $('#theModal').modal('hide')
         });
-        window.livewire.on('category-updated', msg => {
-            $('#theModal').modal('hide')
+        window.livewire.on('hidden.bs.modal', msg => {
+            $('.er').css('display','none')
         });
 
     });
@@ -80,15 +109,15 @@
             swal.fire({
                 title: 'PRECAUCION',
                 icon: 'warning',
-                text: 'No se puede eliminar la categoria, ' + name + ' porque tiene ' 
-                + products + ' productos relacionados'
+                text: 'No se puede eliminar el producto, ' + name + ' porque tiene ' 
+                + products + ' ventas relacionadas'
             })
             return;
         }
         swal.fire({
             title: 'CONFIRMAR',
             icon: 'warning',
-            text: 'Confirmar eliminar la categoria ' + '"' + name + '"',
+            text: 'Confirmar eliminar el prouducto ' + '"' + name + '"',
             showCancelButton: true,
             cancelButtonText: 'Cerrar',
             cancelButtonColor: '#383838',
