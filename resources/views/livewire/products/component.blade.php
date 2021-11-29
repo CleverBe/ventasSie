@@ -3,7 +3,7 @@
         <div class="widget widget-chart-one">
             <div class="widget-heading">
                 <h4 class="card-title">
-                    <b>ComponentName | PageTitle</b>
+                    <b>{{ $componentName }} | {{ $pageTitle }}</b>
                 </h4>
                 <ul class="tabs tab-pills">
                     
@@ -53,7 +53,7 @@
 
                                     <td class="text-center">
                                         <span>
-                                            <img src="{{ asset('storage/products/' . $product->imagen) }}"
+                                            <img src="{{ asset('storage/productos/' . $product->imagen) }}"
                                                 alt="imagen de ejemplo" height="70" width="80" class="rounded">
                                         </span>
                                     </td>
@@ -98,10 +98,9 @@
         window.livewire.on('modal-hide', msg => {
             $('#theModal').modal('hide')
         });
-        window.livewire.on('hidden.bs.modal', msg => {
+        window.livewire.on('hidden.bs.modal',function(e) {
             $('.er').css('display','none')
         });
-
     });
 
     function Confirm(id, name, products) {

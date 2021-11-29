@@ -39,7 +39,6 @@
                             <div>
                                 <img src="assets/img/80x80.png" alt="avatar" class="img-fluid mr-2">
                             </div>
-
                             <div class="media-body">
                                 <h5>Emanuel</h5>
                                 <p>Developer</p>

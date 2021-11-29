@@ -21,6 +21,9 @@
 <link href="{{ asset('assets/css/widgets/modules-widgets.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('assets/css/forms/theme-checkbox-radio.css') }}" rel="stylesheet" type="text/css" />
 
+<link type="text/css" rel="stylesheet" href="{{ asset('assets/css/apps/scrumboard.css') }}">
+<link type="text/css" rel="stylesheet" href="{{ asset('assets/css/apps/notes.css') }}">
+
 <style>
     aside {
         display: none !important;
@@ -75,6 +78,16 @@
         margin-bottom: 4px;
         font-weight: 600;
         letter-spacing: 1px;
+    }
+
+    .connect-sorting {
+        background: #1a1c2d !important;
+    }
+
+    .card {
+        border: 1px solid #0e1726;
+        border-radius: 6px;
+        background: #060818 !important;
     }
 
 </style>
