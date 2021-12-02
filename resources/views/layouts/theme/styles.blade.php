@@ -6,7 +6,7 @@
 <link href="{{ asset('assets/css/structure.css') }}" rel="stylesheet" type="text/css" class="structure" />
 
 <link href="{{ asset('plugins/apex/apexcharts.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ asset('assets/css/dashboard/dash_1.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('assets/css/dashboard/dash_2.css') }}" rel="stylesheet" type="text/css" />
 
 <link href="{{ asset('plugins/font-icons/fontawesome/css/fontawesome.css') }}" rel="stylesheet" type="text/css" />
 <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet" type="text/css" />
@@ -57,38 +57,24 @@
 
     }
 
-    #sidebar ul.menu-categories li.menu>.dropdown-toggle svg {
-        color: #e3e7ed !important;
-        margin-right: 10px;
-        vertical-align: middle;
-        width: 20px;
-        height: 20px;
-        fill: rgba(0, 23, 55, 0.08);
-        stroke-width: 1.6;
-    }
-
-    #sidebar ul.menu-categories li.menu>.dropdown-toggle {
-        display: flex;
-        justify-content: space-between;
-        cursor: pointer;
+    .table>thead>tr>th {
+        color: #ff7600 !important;
+        font-weight: 700;
         font-size: 13px;
-        color: #f7faff !important;
-        padding: 11px 14px;
-        transition: .600s;
-        margin-bottom: 4px;
-        font-weight: 600;
         letter-spacing: 1px;
+        text-transform: uppercase;
     }
+    .table>thead>tr {
+        background: #343434 !important;
+    }
+    .sidebar-theme #compactSidebar {
+        background: #343434 !important;
+}
 
-    .connect-sorting {
-        background: #1a1c2d !important;
-    }
 
-    .card {
-        border: 1px solid #0e1726;
-        border-radius: 6px;
-        background: #060818 !important;
-    }
+    
+
+    
 
 </style>
 
