@@ -1,5 +1,6 @@
 composer require darryldecode/cart
 
 Listeners
-
+composer require spatie/laravel-permission
 npm install onscan.js
+npm install noty

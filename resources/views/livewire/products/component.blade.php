@@ -6,10 +6,10 @@
                     <b>{{ $componentName }} | {{ $pageTitle }}</b>
                 </h4>
                 <ul class="tabs tab-pills">
-                    
-                        <a href="javascript:void(0)" class="btn btn-dark" data-toggle="modal"
+
+                    <a href="javascript:void(0)" class="btn btn-dark" data-toggle="modal"
                         data-target="#theModal">Agregar</a>
-                    
+
                 </ul>
             </div>
             @include('common.searchbox')
@@ -62,8 +62,9 @@
                                             class="btn btn-dark mtmobile" title="Edit">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <a href="javascript:void(0)" onclick="Confirm('{{ $product->id }}','{{ $product->name }}')" class="btn btn-dark"
-                                            title="Delete">
+                                        <a href="javascript:void(0)"
+                                            onclick="Confirm('{{ $product->id }}','{{ $product->name }}')"
+                                            class="btn btn-dark" title="Delete">
                                             <i class="fas fa-trash"></i>
                                         </a>
                                     </td>
@@ -82,12 +83,14 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
 
-        
+
         window.livewire.on('product-added', msg => {
-            $('#theModal').modal('hide')
+            $('#theModal').modal('hide'),
+            noty(msg)
         });
         window.livewire.on('product-updated', msg => {
             $('#theModal').modal('hide')
+            noty(msg)
         });
         window.livewire.on('product-deleted', msg => {
             ///
@@ -98,8 +101,8 @@
         window.livewire.on('modal-hide', msg => {
             $('#theModal').modal('hide')
         });
-        window.livewire.on('hidden.bs.modal',function(e) {
-            $('.er').css('display','none')
+        window.livewire.on('hidden.bs.modal', function(e) {
+            $('.er').css('display', 'none')
         });
     });
 
@@ -108,8 +111,8 @@
             swal.fire({
                 title: 'PRECAUCION',
                 icon: 'warning',
-                text: 'No se puede eliminar el producto, ' + name + ' porque tiene ' 
-                + products + ' ventas relacionadas'
+                text: 'No se puede eliminar el producto, ' + name + ' porque tiene ' +
+                    products + ' ventas relacionadas'
             })
             return;
         }

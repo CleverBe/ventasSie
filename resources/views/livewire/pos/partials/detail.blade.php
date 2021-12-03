@@ -7,12 +7,13 @@
                         <table class="table table-bordered table-stiped mt-1">
                             <thead class="text-white" style="background:#3B3F5C">
                                 <tr>
-                                    <th width="10%"></th>
+                                    <th class="table-th text-left text-white"width="10%">IMAGEN</th>
                                     <th class="table-th text-left text-white">DESCRIPCION</th>
                                     <th class="table-th text-center text-white">PRECIO</th>
                                     <th width="13%" class="table-th text-center text-white">CANT</th>
                                     <th class="table-th text-center text-white">IMPORTE</th>
                                     <th class="table-th text-center text-white">ACCIONES</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -42,8 +43,7 @@
                                             <h6>{{ $item->price * $item->quantity, 2 }}</h6>
                                         </td>
                                         <td class="text-center">
-                                            <button
-                                                onclick="Confirm('{{ $item->id }}','removed','¿Confirmas eliminar elregistro?')"
+                                            <button onclick="Confirm('{{ $item->id }}','removeItem','¿Confirmas eliminar elregistro?')"
                                                 class="btn btn-dark mbmobile">
                                                 <i class="fas fa-trash-alt"></i>
                                             </button>
@@ -53,7 +53,7 @@
                                             </button>
                                             <button wire:click.prevent="increaseQty({{ $item->id }})"
                                                 class="btn btn-dark mbmobile">
-                                                <i class="fas fa-minus"></i>
+                                                <i class="fas fa-plus"></i>
                                             </button>
                                         </td>
                                     </tr>

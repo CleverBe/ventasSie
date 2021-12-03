@@ -1,23 +1,14 @@
 <script>
-$('.tblscroll').nicescroll(
-    {
-        cursorcolor:"#515365",
-        cursorwidth:"30px",
-        background:rgba"(20,20,20,0.3)",
-        cursorborder:"opx",
-        cursorborderradius:3
-    }
-)
+    $('.tblscroll').nicescroll({
+        cursorcolor: "#515365",
+        cursorwidth: "30px",
+        background: "rgba(20,20,20,0.3)",
+        cursorborder: "opx",
+        cursorborderradius: 3
+    })
 
-function Confirm(id, eventName, text,name,products) {
-        if (products > 0) {
-            swal.fire({
-                title: 'PRECAUCION',
-                icon: 'warning',
-                text: text
-            })
-            return;
-        }
+    function Confirm(id, eventName, text) {
+
         swal.fire({
             title: 'CONFIRMAR',
             icon: 'warning',
@@ -34,5 +25,4 @@ function Confirm(id, eventName, text,name,products) {
             }
         })
     }
-
 </script>

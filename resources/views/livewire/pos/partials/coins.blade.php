@@ -36,7 +36,7 @@
                         <div class="row justify-content-between mt-5">
                             <div class="col-sm-12 col-md-12 col-lg-6">
                                 @if ($total > 0)
-                                    <button onclick="Confirm('','clearCard','¿Seguro de eliminar el carrito?')"
+                                    <button onclick="Confirm('','clearCart','¿Seguro de eliminar el carrito?')"
                                         class="btn btn-dark mtmobile">
                                         CANCELAR F4
                                     </button>

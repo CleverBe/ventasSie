@@ -84,6 +84,10 @@ class ProductsController extends Component
             $product->image = $customFileName;
             $product->save();
         }
+        else{
+            $product->image='noimage.jpg';
+            $product->save();
+        }
         $this->resetUI();
         $this->emit('product-added', 'Producto Registrado');
     }
@@ -146,7 +150,7 @@ class ProductsController extends Component
             }
         }
         $this->resetUI();
-        $this->emit('product-added', 'Producto Registrado');
+        $this->emit('product-updated', 'Producto Actualizado');
     }
     protected $listeners = ['deleteRow' => 'Destroy'];
 

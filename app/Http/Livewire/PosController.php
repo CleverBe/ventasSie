@@ -115,7 +115,7 @@ class PosController extends Component
         $product = Product::find($productId);
         $exist = Cart::get($productId);
         if ($exist) {
-            $tite = "cantidad actualizada";
+            $title = "cantidad actualizada";
         } else {
             $title = "producto agregado";
         }
@@ -136,7 +136,7 @@ class PosController extends Component
     public function removeItem($productId)
     {
         Cart::remove($productId);
-
+        
         $this->total = Cart::getTotal();
         $this->itemsQuantity = Cart::getTotalQuantity();
         $this->emit('scan-ok', 'Producto eliminado');
@@ -185,17 +185,17 @@ class PosController extends Component
             return;
         }
         DB::beginTransaction();
-        dd(Auth()->user()->id);
+        
         try { 
             $sale = Sale::create([
-                'total' => $this->total,
-                'items' => $this->itemsQuantity,
-                'cash' => $this->efectivo,
-                'change' => $this->change,
-                'status' => "PAID",
+                'total' => 1,
+                'items' => 1,
+                'cash' => 1,
+                'change' => 1,
+                
                 'user_id' => Auth()->user()->id
             ]);
-           
+            
             if ($sale) {
                 $items = Cart::getContent();
                 foreach ($items as $item) {
@@ -210,10 +210,13 @@ class PosController extends Component
                     $product->stock = $product->stock - $item->quantity;
                     $product->save();
                 }
+
             }
+           
             DB::commit();
+            
             Cart::clear();
-            $this->sefectivo = 0;
+            $this->efectivo = 0;
             $this->change = 0;
             $this->total = Cart::getTotal();
             $this->itemsQuantity = Cart::getTotalQuantity();

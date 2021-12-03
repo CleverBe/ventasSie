@@ -1,8 +1,4 @@
 <div>
-    <style></style>
-
-
-
     <div class="row layout-top-spacing">
         <div class="col-sm-12 col-md-8">
             {{-- detalles --}}
@@ -17,6 +13,8 @@
     </div>
 
 </div>
-<script>
-    
-</script>
+
+    @include('livewire.pos.scripts.events')
+    @include('livewire.pos.scripts.general')
+    @include('livewire.pos.scripts.scan')
+    @include('livewire.pos.scripts.shortcuts')
