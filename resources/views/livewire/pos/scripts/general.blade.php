@@ -3,7 +3,7 @@
         cursorcolor: "#515365",
         cursorwidth: "30px",
         background: "rgba(20,20,20,0.3)",
-        cursorborder: "opx",
+        cursorborder: "0px",
         cursorborderradius: 3
     })
 

@@ -5,6 +5,8 @@ use App\Http\Livewire\CategoriesController;
 use App\Http\Livewire\ProductsController;
 use App\Http\Livewire\CoinsController;
 use App\Http\Livewire\PosController;
+use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +23,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

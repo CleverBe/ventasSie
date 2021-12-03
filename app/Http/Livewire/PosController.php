@@ -50,12 +50,12 @@ class PosController extends Component
     ];
     public function ScanCode($barcode, $cant = 1)
     {
-        
+
         $product = Product::where('barcode', $barcode)->first();
         if ($product == null || empty($product)) {
             $this->emit('scan-notfound', 'El producto no esta registrado');
         } else {
-            
+
             if ($this->inCart($product->id)) {
                 $this->increaseQty($product->id);
                 return;
@@ -136,7 +136,7 @@ class PosController extends Component
     public function removeItem($productId)
     {
         Cart::remove($productId);
-        
+
         $this->total = Cart::getTotal();
         $this->itemsQuantity = Cart::getTotalQuantity();
         $this->emit('scan-ok', 'Producto eliminado');
@@ -168,34 +168,34 @@ class PosController extends Component
 
     public function saveSale()
     {
-       
+
         if ($this->total <= 0) {
             $this->emit('sale-error', 'Agrega productos a la venta');
-            
+
             return;
         }
         if ($this->efectivo <= 0) {
             $this->emit('sale-error', 'Ingrese efectivo');
-            
+
             return;
         }
         if ($this->total > $this->efectivo) {
             $this->emit('sale-error', 'El efectivo debe ser mayor o igual al total');
-            
+
             return;
         }
         DB::beginTransaction();
-        
-        try { 
+
+        try {
             $sale = Sale::create([
                 'total' => 1,
                 'items' => 1,
                 'cash' => 1,
                 'change' => 1,
-                
+
                 'user_id' => Auth()->user()->id
             ]);
-            
+
             if ($sale) {
                 $items = Cart::getContent();
                 foreach ($items as $item) {
@@ -210,11 +210,10 @@ class PosController extends Component
                     $product->stock = $product->stock - $item->quantity;
                     $product->save();
                 }
-
             }
-           
+
             DB::commit();
-            
+
             Cart::clear();
             $this->efectivo = 0;
             $this->change = 0;
@@ -223,11 +222,12 @@ class PosController extends Component
             $this->emit('save-ok', 'venta registrada con exito');
             $this->emit('print-ticket', $sale->id);
         } catch (Exception $e) {
-            DB::rollback('sale-error', $e->getMessage());
+            DB::rollback();
+            $this->emit('sale-error', $e->getMessage());
         }
     }
     public function printTicket($sale)
     {
-        return Redirect::to('print://$sale->id');        
+        return Redirect::to('print://$sale->id');
     }
 }
