@@ -38,7 +38,17 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
-
+    public function getImagenAttribute()
+    {
+        if ($this->image == null) {
+            return 'noimg.png';
+        }
+        if (file_exists('storage/usuarios/' . $this->image))
+            return $this->image;
+        else {
+            return 'noimg.png';
+        }
+    }
     /**
      * The attributes that should be cast.
      *

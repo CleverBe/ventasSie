@@ -19,33 +19,47 @@
                     <table class="table table-unbordered table-hover mt-2">
                         <thead class="text-white" style="background: #3B3F5C">
                             <tr>
-                                <th class="table-th text-withe">TIPO</th>
-                                <th class="table-th text-withe text-center">VALOR</th>
-                                <th class="table-th text-withe text-center">IMAGEN</th>                                
-                                <th class="table-th text-withe text-center">ACCIONES</th>
+                                <th class="table-th text-wHite">USUARIO</th>
+                                <th class="table-th text-wHite text-center">TELÉFONO</th>
+                                <th class="table-th text-wHite text-center">EMANIL</th>                                
+                                <th class="table-th text-wHite text-center">PERFIL</th>
+                                <th class="table-th text-wHite text-center">ESTATUS</th>
+                                <th class="table-th text-wHite text-center">IMAGEN</th>
+                                <th class="table-th text-wHite text-center">ACCIONES</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($data as $coin)
+                            @foreach ($data as $r)
                                 <tr>
                                     <td>
-                                        <h6 class="text-center">{{ $coin->type }}</h6>
+                                        <h6>{{ $r->name }}</h6>
                                     </td>
+                                    <td><h6 class="text-center">{{ $r->phone }}</h6></td>                            
+                                    <td><h6 class="text-center">{{ $r->email }}</h6></td>                            
+                                    <td><h6 class="text-center">{{ $r->profile }}</h6></td>
                                     <td>
-                                        <h6 class="text-center">{{ number_format($coin->value,2) }}</h6>
-                                    </td>                            
+                                        <span class="badge {{$r->status=='ACTIVE'?'badge-success':'badge-danger'}} text-uppercase">
+                                            {{$r->status}}</span>
+                                    </td>
+
+               {{--                      <td class="text-center">
+                                        @if($r->image !=null)
+                                            <img src="{{ asset('storage/users/' . $r->imagen) }}"
+                                                alt="imagen de ejemplo" class="card-img-top img-fluid">
+                                        @endif
+                                    </td> --}}
                                     <td class="text-center">
                                         <span>
-                                            <img src="{{ asset('storage/monedas/' . $coin->imagen) }}"
-                                                alt="imagen de ejemplo" height="70" width="80" class="rounded">
+                                            <img src="{{ asset('storage/usuarios/' . $r->imagen) }}"
+                                                alt="imagen de ejemplo" height="70" width="80">
                                         </span>
                                     </td>
                                     <td class="text-center">
-                                        <a href="javascript:void(0)" wire:click="Edit({{ $coin->id }})"
+                                        <a href="javascript:void(0)" wire:click="Edit({{ $r->id }})"
                                             class="btn btn-dark mtmobile" title="Edit">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <a href="javascript:void(0)" onclick="Confirm('{{ $coin->id }}','{{ $coin->type }}')" 
+                                        <a href="javascript:void(0)" onclick="Confirm('{{ $r->id }}','{{ $r->name }}')" 
                                             class="btn btn-dark" title="Delete">
                                             <i class="fas fa-trash"></i>
                                         </a>
@@ -59,21 +73,21 @@
             </div>
         </div>
     </div>
-    @include('livewire.denominations.form')
+    @include('livewire.users.form')
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
 
-        window.livewire.on('coin-added', msg => {
+        window.livewire.on('item-added', msg => {
             $('#theModal').modal('hide')
             noty(msg)
         });
-        window.livewire.on('coin-updated', msg => {
+        window.livewire.on('item-updated', msg => {
             $('#theModal').modal('hide')
             noty(msg)
         });
-        window.livewire.on('coin-deleted', msg => {
+        window.livewire.on('item-deleted', msg => {
             noty(msg)
         });
         window.livewire.on('modal-show', msg => {
@@ -82,24 +96,19 @@
         window.livewire.on('modal-hide', msg => {
             $('#theModal').modal('hide')
         });        
+        window.livewire.on('user-withsales', msg => {
+            noty(msg)
+        });        
         
 
     });
 
-    function Confirm(id, type, products) {
-        if (products > 0) {
-            swal.fire({
-                title: 'PRECAUCION',
-                icon: 'warning',
-                text: 'No se puede eliminar la moneda, ' + type + ' porque tiene ' 
-                + products + ' ventas relacionadas'
-            })
-            return;
-        }
+    function Confirm(id, name) {
+        
         swal.fire({
             title: 'CONFIRMAR',
             icon: 'warning',
-            text: 'Confirmar eliminar la moneda ' + '"' + type + '"',
+            text: 'Confirmar eliminar al usuario ' + '"' + name + '"',
             showCancelButton: true,
             cancelButtonText: 'Cerrar',
             cancelButtonColor: '#383838',

@@ -48,7 +48,7 @@
                 </svg>
             </li>
 
-            <li class="menu {{request()->routeIs('ventas') ? 'active':''}}"">
+            <li class="menu {{request()->routeIs('ventas') ? 'active':''}}">
                 <a href="{{url('pos')}}" data-active="false" class="menu-toggle">
                     <div class="base-menu">
                         <div class="base-icons">
@@ -70,8 +70,8 @@
                 </svg>
             </li>
 
-            <li class="menu">
-                <a href="#components" data-active="false" class="menu-toggle">
+            <li class="menu {{request()->routeIs('rol') ? 'active':''}}">
+                <a href="{{url('roles')}}" data-active="false" class="menu-toggle">
                     <div class="base-menu">
                         <div class="base-icons">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -92,8 +92,8 @@
                 </svg>
             </li>
 
-            <li class="menu">
-                <a href="#forms" data-active="false" class="menu-toggle">
+            <li class="menu {{request()->routeIs('permiso') ? 'active':''}}">
+                <a href="{{url('permisos')}}" data-active="false" class="menu-toggle">
                     <div class="base-menu">
                         <div class="base-icons">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -113,8 +113,8 @@
                 </svg>
             </li>
 
-            <li class="menu">
-                <a href="#tables" data-active="false" class="menu-toggle">
+            <li class="menu {{request()->routeIs('asig') ? 'active':''}}">
+                <a href="{{url('asignar')}}" data-active="false" class="menu-toggle">
                     <div class="base-menu">
                         <div class="base-icons">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -134,8 +134,8 @@
                 </svg>
             </li>
 
-            <li class="menu">
-                <a href="#users" data-active="false" class="menu-toggle">
+            <li class="menu {{request()->routeIs('usuarios') ? 'active':''}}">
+                <a href="{{url('users')}}" data-active="false" class="menu-toggle">
                     <div class="base-menu">
                         <div class="base-icons">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -178,8 +178,8 @@
                 </svg>
             </li>
 
-            <li class="menu">
-                <a href="#more" data-active="false" class="menu-toggle">
+            <li class="menu {{request()->routeIs('cash') ? 'active':''}}">
+                <a href="{{url('cashout')}}" data-active="false" class="menu-toggle">
                     <div class="base-menu">
                         <div class="base-icons">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"

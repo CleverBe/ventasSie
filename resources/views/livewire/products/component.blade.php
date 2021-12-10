@@ -93,7 +93,7 @@
             noty(msg)
         });
         window.livewire.on('product-deleted', msg => {
-            ///
+            noty(msg)
         });
         window.livewire.on('modal-show', msg => {
             $('#theModal').modal('show')

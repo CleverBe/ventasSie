@@ -62,7 +62,7 @@ class CategoriesController extends Component
             'name' => $this->name
         ]);
 
-        $customFileName;
+        
         if ($this->image) {
             $customFileName = uniqid() . '_.' . $this->image->extension();
             $this->image->storeAs('public/categorias', $customFileName);
@@ -105,7 +105,7 @@ class CategoriesController extends Component
             }
         }
         $this->resetUI();
-        $this->emit('categoy-updated', 'Categoria Actualizada');
+        $this->emit('category-updated', 'Categoria Actualizada');
     }
 
     protected $listeners = ['deleteRow' => 'Destroy'];
@@ -128,5 +128,6 @@ class CategoriesController extends Component
         $this->image = null;
         $this->search = '';
         $this->selected_id = 0;
+        $this->resetValidation();
     }
 }

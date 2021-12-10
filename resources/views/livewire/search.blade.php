@@ -10,8 +10,8 @@
         </li>
     </ul>
     <script>
-        document.addEventListener('DOMcontentLoaded',function(){
-            livewire.on('scan-code',action=>{
+        document.addEventListener('DOMContentLoaded',function(){
+            livewire.on('scan-code',action =>{
                 $('#code').val('')
             })
         })

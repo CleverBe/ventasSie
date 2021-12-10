@@ -72,7 +72,7 @@ class PosController extends Component
                 $product->image
             );
             $this->total = Cart::getTotal();
-
+            $this->itemsQuantity = Cart::getTotalQuantity();
             $this->emit('scan-ok', 'Producto agregado');
         }
     }
@@ -111,6 +111,7 @@ class PosController extends Component
 
     public function UpdateQty($productId, $cant = 1)
     {
+        
         $title = '';
         $product = Product::find($productId);
         $exist = Cart::get($productId);
@@ -125,9 +126,11 @@ class PosController extends Component
                 return;
             }
         }
+        
         $this->removeItem($productId);
         if ($cant > 0) {
-            Cart::add($product->id, $product->name, $product->price, $product->image);
+            
+            Cart::add($product->id, $product->name, $product->price,$cant, $product->image);
             $this->total = Cart::getTotal();
             $this->itemsQuantity = Cart::getTotalQuantity();
             $this->emit('scan-ok', $title);
@@ -145,14 +148,19 @@ class PosController extends Component
     {
         $item = Cart::get($productId);
         Cart::remove($productId);
-
+        $product = Product::find($productId);
         $newQty = ($item->quantity) - 1;
         if ($newQty > 0) {
-            Cart::add($item->id, $item->name, $item->price, $newQty, $item->attributes[0]);
+            Cart::add($item->id, $item->name, $item->price, $newQty, $product->image);
             $this->total = Cart::getTotal();
             $this->itemsQuantity = Cart::getTotalQuantity();
             $this->emit('scan-ok', 'Cantidad actualizada');
         }
+        if($newQty==0 && Cart::getTotalQuantity()==0){
+            $this->total = 0;
+            $this->change=0;
+        }
+        $this->itemsQuantity = Cart::getTotalQuantity();
     }
 
     public function clearCart()
@@ -188,11 +196,10 @@ class PosController extends Component
 
         try {
             $sale = Sale::create([
-                'total' => 1,
-                'items' => 1,
-                'cash' => 1,
-                'change' => 1,
-
+                'total' => $this->total,
+                'items' => $this->itemsQuantity,
+                'cash' => $this->efectivo,
+                'change' => $this->change,
                 'user_id' => Auth()->user()->id
             ]);
 

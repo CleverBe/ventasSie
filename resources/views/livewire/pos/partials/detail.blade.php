@@ -4,16 +4,15 @@
             <div class="card-body">
                 @if ($total > 0)
                     <div class="table-responsive tblscroll" style="max-height:650px; overflow:hidden">
-                        <table class="table table-bordered table-stiped mt-1">
+                        <table class="table table-bordered table-striped mt-1">
                             <thead class="text-white" style="background:#3B3F5C">
                                 <tr>
-                                    <th class="table-th text-left text-white"width="10%">IMAGEN</th>
+                                    <th class="table-th text-center text-white">IMAGEN</th>
                                     <th class="table-th text-left text-white">DESCRIPCION</th>
                                     <th class="table-th text-center text-white">PRECIO</th>
                                     <th width="13%" class="table-th text-center text-white">CANT</th>
-                                    <th class="table-th text-center text-white">IMPORTE</th>
+                                    <th width="12%"class="table-th text-center text-white">IMPORTE</th>
                                     <th class="table-th text-center text-white">ACCIONES</th>
-                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -34,8 +33,8 @@
                                         <td class="text-center">${{ number_format($item->price, 2) }}</td>
                                         <td>
                                             <input type="number" id="r{{ $item->id }}"
-                                                wire:change="updateQty({{ $item->id }},$('#r' +{{ $item->id }}).val())"
-                                                style="font-size:1rem!important" class="format-control text-center"
+                                                wire:change="UpdateQty({{ $item->id }},$('#r'+{{ $item->id }}).val())"
+                                                style="font-size: 1rem!important;" class="form-control text-center"
                                                 value="{{ $item->quantity }}">
 
                                         </td>
@@ -43,7 +42,8 @@
                                             <h6>{{ $item->price * $item->quantity, 2 }}</h6>
                                         </td>
                                         <td class="text-center">
-                                            <button onclick="Confirm('{{ $item->id }}','removeItem','¿Confirmas eliminar elregistro?')"
+                                            <button
+                                                onclick="Confirm('{{ $item->id }}','removeItem','¿Confirmas eliminar elregistro?')"
                                                 class="btn btn-dark mbmobile">
                                                 <i class="fas fa-trash-alt"></i>
                                             </button>

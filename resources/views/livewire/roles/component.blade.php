@@ -34,18 +34,13 @@
                                         <h6 class="text-center">{{ ($rol->name) }}</h6>
                                     </td>                           
                                                              
-                                    <td class="text-center">
-                                        <span>
-                                            <img src="{{ asset('storage/monedas/' . $coin->imagen) }}"
-                                                alt="imagen de ejemplo" height="70" width="80" class="rounded">
-                                        </span>
-                                    </td>
+                                    
                                     <td class="text-center">
                                         <a href="javascript:void(0)" wire:click="Edit({{ $rol->id }})"
                                             class="btn btn-dark mtmobile" title="Editar registro">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <a href="javascript:void(0)" onclick="Confirm('{{ $rol->id }}')" 
+                                        <a href="javascript:void(0)" onclick="Confirm('{{ $rol->id }}','{{ $rol->name }}')" 
                                             class="btn btn-dark" title="Eliminar registro">
                                             <i class="fas fa-trash"></i>
                                         </a>
@@ -82,28 +77,18 @@
         window.livewire.on('item-error', Msg => {
             noty(Msg)
         })
-        window.livewire.on('modal-show', Msg => {
+        window.livewire.on('show-modal', Msg => {
             $('#theModal').modal('show')
         })
         window.livewire.on('modal-hide', Msg => {
             $('#theModal').modal('hide')
         })      
-        window.livewire.on('hidden.bs.modal', Msg => {
-            $('.er').css('display','none')
-        })       
+              
 
     });
 
-    function Confirm(id, name, products) {
-        if (products > 0) {
-            swal.fire({
-                title: 'PRECAUCION',
-                icon: 'warning',
-                text: 'No se puede eliminar la categoria, ' + name + ' porque tiene ' 
-                + products + ' productos relacionados'
-            })
-            return;
-        }
+    function Confirm(id, name) {
+        
         swal.fire({
             title: 'CONFIRMAR',
             icon: 'warning',
